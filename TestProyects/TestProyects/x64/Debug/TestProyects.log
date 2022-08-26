@@ -1,0 +1,9 @@
+﻿  Source.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\algorithm(3635,20): error C2064: el término no se evalúa como una función con 0 argumentos
+E:\Angel Josue Loayza Huarachi_UCSP\Semestre 7 - 2022 - CCOMP7\Estructura de datos Avanzadas\TestProyects\TestProyects\Source.cpp(35): message : Vea la referencia a la creación de una instancia de la función plantilla "void std::generate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,int>(_FwdIt,_FwdIt,_Fn)" que se está compilando
+          with
+          [
+              _Ty=double,
+              _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,
+              _Fn=int
+          ]

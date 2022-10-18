@@ -3,4 +3,4 @@ project(Proyectofinal)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Proyectofinal main.cpp priorityQueue.h menu.h)
+add_executable(Proyectofinal main.cpp menu.h priorityQueue2.h)

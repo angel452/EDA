@@ -1,5 +1,6 @@
 #include <iostream>
-#include "priorityQueue.h"
+//#include "priorityQueue.h"
+#include "priorityQueue2.h"
 #include "menu.h"
 using  namespace  std;
 
@@ -14,7 +15,8 @@ int main()
         if( answer == 1) //insert
         {
             int data, priority;
-            cout << "Data: "; cin >> data;
+            //cout << "Data: "; cin >> data;
+            data = 1;
             cout << "Priority: "; cin >> priority;
 
             insertElement(queue, data, priority);
@@ -22,15 +24,17 @@ int main()
 
         else if(answer == 2) // delete
         {
-            deleteElement();
+            int num; cin >> num;
+            deleteElement(queue,num);
         }
 
         else if(answer == 3) //search
         {
-            searchElement();
+            int num; cin >> num;
+            searchElement(queue,num);
         }
 
-        else if(answer == 4) //search
+        else if(answer == 4) //show
         {
             showQueue(queue);
         }

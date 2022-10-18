@@ -1,15 +1,17 @@
 #include <iostream>
 using namespace  std;
 
+template <typename ElemType>
 struct Node{
-    int priority;
-    int data;
+    ElemType priority;
+    ElemType data;
     Node *next;
 };
 
-void showQueue(Node *queue)
+template <typename ElemType>
+void showQueue(Node<ElemType> *queue)
 {
-    Node *aux = queue;
+    Node<ElemType> *aux = queue;
     cout << "More Priority..." << endl;
     while (aux != nullptr)
     {
@@ -19,14 +21,15 @@ void showQueue(Node *queue)
     cout << endl;
 }
 
-void insertElement(Node *&queue, int _data, int _priority)
+template <typename ElemType>
+void insertElement(Node <ElemType> *&queue, int _data, int _priority)
 {
-    Node *newNodo = new Node();
+    Node<ElemType> *newNodo = new Node<ElemType>() ;
     newNodo->priority = _priority;
     newNodo->data = _data;
 
-    Node *aux1 = queue;
-    Node *aux2;
+    Node<ElemType> *aux1 = queue;
+    Node<ElemType> *aux2;
 
     while( (aux1 != nullptr) && (aux1->priority < _priority) )
     {
@@ -46,12 +49,13 @@ void insertElement(Node *&queue, int _data, int _priority)
     newNodo->next = aux1;
 }
 
-void deleteElement(Node *queue, int num)
+template <typename ElemType>
+void deleteElement(Node<ElemType> *&queue, int num)
 {
     if(queue != nullptr)
     {
-        Node *aux1 = queue;
-        Node *aux2 = nullptr;
+        Node<ElemType> *aux1 = queue; //aux borrar
+        Node<ElemType> *aux2 = nullptr; // anterior
 
         while( (aux1 != nullptr) && (aux1->data != num) )
         {
@@ -63,9 +67,13 @@ void deleteElement(Node *queue, int num)
         {
             cout << "Elemento no encontrado" << endl;
         }
+
         else if (aux2 == nullptr)
         {
+            //cout << "el primer elemento borrado" << endl;
+            //cout << queue->data << " - ";
             queue = queue->next;
+            //cout << queue->data << endl;
             delete aux1;
         }
         else
@@ -76,9 +84,10 @@ void deleteElement(Node *queue, int num)
     }
 }
 
-bool searchElement(Node *queue, int num)
+template <typename ElemType>
+bool searchElement(Node<ElemType> *queue, int num)
 {
-    Node *aux = queue;
+    Node<ElemType> *aux = queue;
     int contador = 1;
     while ( aux != nullptr )
     {
@@ -92,4 +101,11 @@ bool searchElement(Node *queue, int num)
     }
     cout << "No se encontro el elemento" << endl;
     return false;
+}
+
+template<typename ElemType>
+void getPQ(Node<ElemType> *queue)
+{
+    cout << "Dato con mas prioridad: " << queue->data << endl;
+    cout << "Nivel de Prioridad: " << queue->priority << endl;
 }

@@ -8,6 +8,7 @@ int showMenu()
     cout << " Delete a Element ------------------ 2 " << endl;
     cout << " Search a Element ------------------ 3 " << endl;
     cout << " Show queue  ----------------------- 4 " << endl;
+    cout << " Insert Elements from .txt  -------- 5 " << endl;
     cout << " Exit ------------------------------ 0 " << endl;
     cout << "-----------------------------------------------" << endl;
 

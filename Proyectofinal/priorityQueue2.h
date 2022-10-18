@@ -10,9 +10,10 @@ struct Node{
 void showQueue(Node *queue)
 {
     Node *aux = queue;
+    cout << "More Priority..." << endl;
     while (aux != nullptr)
     {
-        cout << "| " << aux->data << " " << aux->priority << " |   ";
+        cout << "| D:" << aux->data << " P:" << aux->priority << " |   ";
         aux = aux->next;
     }
     cout << endl;
@@ -57,6 +58,21 @@ void deleteElement(Node *queue, int num)
             aux2 = aux1;
             aux1 = aux1->next;
         }
+
+        if(aux1 == nullptr)
+        {
+            cout << "Elemento no encontrado" << endl;
+        }
+        else if (aux2 == nullptr)
+        {
+            queue = queue->next;
+            delete aux1;
+        }
+        else
+        {
+            aux2->next = aux1->next;
+            delete aux1;
+        }
     }
 }
 
@@ -74,5 +90,6 @@ bool searchElement(Node *queue, int num)
         contador++;
         aux = aux->next;
     }
+    cout << "No se encontro el elemento" << endl;
     return false;
 }

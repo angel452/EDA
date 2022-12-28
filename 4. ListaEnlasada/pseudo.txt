@@ -1,0 +1,39 @@
+bool valide(node pred, node current){
+    if( !pred.mark || !curretn.mark ){
+        return false
+    }
+    return true
+}
+
+bool add(T item){
+    while (true){
+        // Tenemos 2 punteros anterior y actual
+        node pred = head
+        node current = pred->head 
+
+        //busqueda del valor
+        while(current.val < item){
+            pred = current
+            current = current->next
+        }
+
+        //Ya lo encontre. Tons lock()
+        pred.lock()
+        current.lock()
+
+        ...
+
+        if (valide(pred,current)){
+            if(curr.val == item){
+                false
+            }
+            node newnodo = new node
+            ...
+            return true;
+        }
+        unlock() // al final de todo, hacer 
+                // unlock del pred y actual
+        ...
+
+    }
+}
